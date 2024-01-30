@@ -1,0 +1,45 @@
+.container_artisan{
+    width: 60%;
+    margin: 0 auto;
+}
+
+article{
+    margin: 20px 20px;
+}
+
+.lign1, .lign2{
+    width: 50px;
+    height: 10px;
+}
+
+.lign1{
+    background-color: #82b864; 
+}
+
+.lign2{
+    background-color: #cd2c2e; 
+}
+
+.container_card{
+    display: flex;
+    width: 900px;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+@media screen and (max-width: 900px) {
+    .container_artisan{
+        width: 70%;
+    }
+
+    .container_card{
+        display: block;
+        width: 320px;
+        margin: 0 auto;
+        padding: 10px;
+    }
+    
+    .card{
+        margin-bottom: 20px;
+    }
+}
