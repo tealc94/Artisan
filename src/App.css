@@ -33,6 +33,18 @@ body p{
     width: 200px;
 }
 
+input{
+border: none;
+border-bottom: 1px solid #384050;
+}
+
+body .menuLink:active,
+body .menuLink:focus,
+body .menuLink:hover{
+  color: #0074c7;
+  opacity: 0.8;
+}
+
 .lign{
   width: 500px;
   height: 2px;
@@ -41,6 +53,9 @@ body p{
   margin-bottom: 20px;
 }
 
+body a{
+text-decoration: none;
+}
 .container_footer{
   background-color:#0074c7;    
 }
@@ -62,11 +77,18 @@ body p{
 }
 
 /*--- page en maintenance ---*/
+.container_404,
 .container_mention, 
 .container_donneePersonnelle, 
 .container_cookies, 
 .container_accessibilite{
-  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+  align-items: center;
   text-align: center;
+  justify-content: center;
 }
 /*---------------------------*/

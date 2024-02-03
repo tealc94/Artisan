@@ -9,10 +9,10 @@ function Home() {
     const [artisans, setArtisans] = useState([]);
 
     const getArtisans = async () => {
-      const response = await fetch("./datas.json");
-      const data = await response.json();
-  
-      setArtisans(data);
+        const response = await fetch("./datas.json");
+        const data = await response.json();
+
+        setArtisans(data);
     };
   
     useEffect(() => {
@@ -60,19 +60,16 @@ function Home() {
                                 <Card.Body>
                                     <Card.Text>  
                                         <p>Nom de l'artisan:<br/>{item.name}</p>
-                                        <Rating name="read-only" value={item.note} readOnly /> 
+                                        <Rating size="large" name="read-only" value={item.note} precision={0.1} readOnly /> 
                                         <p>Spécialité: {item.specialty}</p> 
                                         <p>Localisation: {item.location}</p>   
                                     </Card.Text>
                                 </Card.Body>
                             </Card>
                         ))}
-                    </div>  
-
-                                   
+                    </div>                                     
                 </section>
-            </div>
-            
+            </div>            
         </div>
     )
 }
