@@ -1,5 +1,5 @@
 .container_artisan{
-    width: 60%;
+    width: 80%;
     margin: 0 auto;
 }
 
@@ -22,7 +22,8 @@ article{
 
 .container_card{
     display: flex;
-    width: 900px;
+    width: 800px;
+    margin: 0 auto;
     gap: 10px;
     margin-bottom: 20px;
 }

@@ -3,22 +3,66 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import  { faMapMarkerAlt, faPhone } from "@fortawesome/free-solid-svg-icons";
+import  { faMapMarkerAlt, faPhone, faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+
+/*import React, { useState, useEffect} from "react";*/
+import React from "react";
+/*import { Link } from "react-router-dom";*/
 
 function MenuHeader() {
+
+  /*-----------------
+  const [artisans, setArtisans] = useState([]);
+
+  const getArtisans = async () => {
+      const response = await fetch("./datas.json");
+      const data = await response.json();
+  
+      setArtisans(data);
+  };
+
+  useEffect(() => {
+      getArtisans();
+  }, []);
+
+  /*-----------------*/
+
   return (
     <Navbar expand="lg" className="bg-body-tertiary navbar-header">
       <Container className="menu-container">
         <Navbar.Brand href="/"><img className="image_menu" src="/assets/Logo.png" alt="logo trouve ton artisan" /></Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav"/>
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="ms-auto">
-            <Nav.Link href="batiment">Batiment</Nav.Link>
-            <Nav.Link href="services">Services</Nav.Link>    
-            <Nav.Link href="fabrication">Fabrication</Nav.Link> 
-            <Nav.Link href="alimentation">Alimentation</Nav.Link>           
+          <Nav className="ms-auto">               
+            <input type="text" 
+                    placeholder="Rechercher"
+                    /><FontAwesomeIcon icon={faMagnifyingGlass} size="lg" style={{color: "#384050",}} />
+            
+          {/*   <Nav.Link as={Link} className="menuLink" to="/Bâtiment">Batiment</Nav.Link>
+              {artisans.filter(item => item.top === "Bâtiment").map(item =>(
+                <Nav.Link as={Link} key={item.id} to={`batiment/${item.id}`}>{item.name}</Nav.Link>              
+              ))}
+            <Nav.Link as={Link} className="menuLink" to="/Services">Services</Nav.Link>
+              {artisans.filter(item => item.top === "Services").map(item =>(
+                <Nav.Link as={Link} key={item.id} to={`services/${item.id}`}>{item.name}</Nav.Link>              
+              ))} 
+            <Nav.Link as={Link} className="menuLink" to="/Fabrication">Fabrication</Nav.Link>
+              {artisans.filter(item => item.top === "Fabrication").map(item =>(
+                <Nav.Link as={Link} key={item.id} to={`fabrication/${item.id}`}>{item.name}</Nav.Link>              
+              ))}
+            <Nav.Link as={Link} className="menuLink" to="/Alimentation">Alimentation</Nav.Link>
+            {artisans.filter(item => item.top === "Alimentation").map(item =>(
+              <Nav.Link as={Link} key={item.id} to={`alimentation/${item.id}`}>{item.name}</Nav.Link>              
+            ))} */}
+
+
+            
+            <Nav.Link className="menuLink" href="Bâtiment">Batiment</Nav.Link>
+            <Nav.Link className="menuLink" href="Services">Services</Nav.Link>    
+            <Nav.Link className="menuLink" href="Fabrication">Fabrication</Nav.Link> 
+            <Nav.Link className="menuLink" href="Alimentation">Alimentation</Nav.Link>          
           </Nav>
-        </Navbar.Collapse>
+        </Navbar.Collapse>        
       </Container>
     </Navbar>
   );
@@ -70,7 +114,7 @@ export default function Layout() {
       </header>
       <Outlet />
       <footer className="App-footer"> 
-        <MenuFooter></MenuFooter>
+        <MenuFooter/>
       </footer>
     </>
   )  
