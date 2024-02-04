@@ -3,29 +3,13 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import  { faMapMarkerAlt, faPhone, faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
-
-/*import React, { useState, useEffect} from "react";*/
+import { faMapMarkerAlt, faPhone, faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 import React from "react";
-/*import { Link } from "react-router-dom";*/
 
-function MenuHeader() {
 
-  /*-----------------
-  const [artisans, setArtisans] = useState([]);
 
-  const getArtisans = async () => {
-      const response = await fetch("./datas.json");
-      const data = await response.json();
-  
-      setArtisans(data);
-  };
-
-  useEffect(() => {
-      getArtisans();
-  }, []);
-
-  /*-----------------*/
+function MenuHeader() { 
 
   return (
     <Navbar expand="lg" className="bg-body-tertiary navbar-header">
@@ -34,33 +18,15 @@ function MenuHeader() {
         <Navbar.Toggle aria-controls="basic-navbar-nav"/>
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">               
-            <input type="text" 
-                    placeholder="Rechercher"
-                    /><FontAwesomeIcon icon={faMagnifyingGlass} size="lg" style={{color: "#384050",}} />
-            
-          {/*   <Nav.Link as={Link} className="menuLink" to="/Bâtiment">Batiment</Nav.Link>
-              {artisans.filter(item => item.top === "Bâtiment").map(item =>(
-                <Nav.Link as={Link} key={item.id} to={`batiment/${item.id}`}>{item.name}</Nav.Link>              
-              ))}
-            <Nav.Link as={Link} className="menuLink" to="/Services">Services</Nav.Link>
-              {artisans.filter(item => item.top === "Services").map(item =>(
-                <Nav.Link as={Link} key={item.id} to={`services/${item.id}`}>{item.name}</Nav.Link>              
-              ))} 
-            <Nav.Link as={Link} className="menuLink" to="/Fabrication">Fabrication</Nav.Link>
-              {artisans.filter(item => item.top === "Fabrication").map(item =>(
-                <Nav.Link as={Link} key={item.id} to={`fabrication/${item.id}`}>{item.name}</Nav.Link>              
-              ))}
-            <Nav.Link as={Link} className="menuLink" to="/Alimentation">Alimentation</Nav.Link>
-            {artisans.filter(item => item.top === "Alimentation").map(item =>(
-              <Nav.Link as={Link} key={item.id} to={`alimentation/${item.id}`}>{item.name}</Nav.Link>              
-            ))} */}
-
-
-            
-            <Nav.Link className="menuLink" href="Bâtiment">Batiment</Nav.Link>
-            <Nav.Link className="menuLink" href="Services">Services</Nav.Link>    
-            <Nav.Link className="menuLink" href="Fabrication">Fabrication</Nav.Link> 
-            <Nav.Link className="menuLink" href="Alimentation">Alimentation</Nav.Link>          
+            <input 
+              type="text" 
+              placeholder="Rechercher"
+            />
+            <FontAwesomeIcon icon={faMagnifyingGlass} size="lg" style={{color: "#384050",}} />  
+              <Nav.Link as={Link} className="menuLink" to="/artisan/Bâtiment">Batiment</Nav.Link>
+              <Nav.Link as={Link} className="menuLink" to="/artisan/Services">Services</Nav.Link>    
+              <Nav.Link as={Link} className="menuLink" to="/artisan/Fabrication">Fabrication</Nav.Link> 
+              <Nav.Link as={Link} className="menuLink" to="/artisan/Alimentation">Alimentation</Nav.Link>          
           </Nav>
         </Navbar.Collapse>        
       </Container>
@@ -87,16 +53,16 @@ function MenuFooter() {
         <div>
           <Nav className="justify-content-center navbar-footer" activeKey="/home">
             <Nav.Item>
-              <Nav.Link className="textLink" href="mentions">Mention légales</Nav.Link>
+              <Nav.Link as={Link} className="textLink" to="artisan/mentions">Mention légales</Nav.Link>
             </Nav.Item>
             <Nav.Item>
-              <Nav.Link className="textLink" href="donnees-personnelles">Données personnelles</Nav.Link>
+              <Nav.Link as={Link} className="textLink" to="artisan/donnees-personnelles">Données personnelles</Nav.Link>
             </Nav.Item>
             <Nav.Item>
-              <Nav.Link className="textLink" href="accessibilite">Accessibilité</Nav.Link>
+              <Nav.Link as={Link} className="textLink" to="artisan/accessibilite">Accessibilité</Nav.Link>
             </Nav.Item>    
             <Nav.Item>
-              <Nav.Link className="textLink" href="cookies">Cookies</Nav.Link>
+              <Nav.Link as={Link} className="textLink" to="artisan/cookies">Cookies</Nav.Link>
             </Nav.Item>    
           </Nav> 
         </div>         

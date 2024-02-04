@@ -14,9 +14,10 @@ import Artisan from './components/Artisan';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-function App() {
- 
-  /*----------------*/
+function App() { 
+
+  const [termeRecherche, setTermeRecherche] = useState("");
+
   const [artisans, setArtisans] = useState([]);
   
   const getArtisans = async () => {
@@ -30,31 +31,20 @@ function App() {
       getArtisans();
   }, []);
 
-
-  /*----------------*/
-
   return (
     <div className="App">
       <Routes>
-        <Route path='/' element={<Layout artisans={artisans}/>}>
+        <Route path='/' element={<Layout artisans={artisans} setTermeRecherche={setTermeRecherche}/>}>
           <Route index element={<Home/>}/>
-          <Route path='/:category' element={<ListeArtisan artisans={artisans}/>}/>
-         {/*} <Route path='batiment' element={<ListeArtisan artisans={artisans}/>}/>
-          <Route path='Services' element={<ListeArtisan artisans={artisans}/>}/>
-          <Route path='fabrication' element={<ListeArtisan/>}/>
-          <Route path='alimentation' element={<ListeArtisan/>}/>*/}
-          
-          <Route path="/artisan/:id" element={<Artisan artisans={artisans}/>}/>
-        {/*  <Route path='/artisan'element={<Artisan artisans={artisans}/>}/> */}
-
-          <Route path='mentions' element={<Mentions/>}/>
-          <Route path='donnees-personnelles' element={<DonneePersonnelle/>}/>
-          <Route path='accessibilite' element={<Accessibilite/>}/>
-          <Route path='cookies' element={<Cookies/>}/>
-        </Route>
-        <Route path="*" element={<NotFound/>}/>
-      </Routes>
-      
+          <Route path='/artisan/:category' element={<ListeArtisan artisans={artisans}/>}/>          
+          <Route path="/artisan/:category/:id" element={<Artisan artisans={artisans}/>}/>
+          <Route path='/artisan/mentions' element={<Mentions/>}/>
+          <Route path='/artisan/donnees-personnelles' element={<DonneePersonnelle/>}/>
+          <Route path='/artisan/accessibilite' element={<Accessibilite/>}/>
+          <Route path='/artisan/cookies' element={<Cookies/>}/>
+          <Route path="*" element={<NotFound/>}/>
+        </Route>        
+      </Routes>      
     </div>
   );
 }
