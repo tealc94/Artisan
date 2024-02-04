@@ -4,15 +4,11 @@ import { useParams } from "react-router-dom";
 import { Rating } from "@mui/material";
 import { Link } from "react-router-dom";
 
-
 const ListeArtisan = ({ artisans }) => {
   const {category } = useParams();
- /* const { category:urlCategory } = useParams();
-  const category = urlCategory || propCategory;*/
- /* const artisansFiltered = artisans.filter(artisan => artisan.category === category);*/
- const handleClick = (clickedId) => {
-  console.log("Catégorie cliquée :", clickedId);
- }
+
+  const handleClick = () => {};
+
   return (    
       <div className="bloc_listArtisan">
         <div className="container_listArtisan">
@@ -21,9 +17,8 @@ const ListeArtisan = ({ artisans }) => {
               const blocArtisans = [];
               for (let i = 0; i < artisans.length; i++) {
                 if(artisans[i].category === category) {
-                  blocArtisans.push(
-                    
-                    <Link key={artisans[i].id} to={`/artisan/${artisans[i].id}`} onClick={() => handleClick(artisans[i].id)}>
+                  blocArtisans.push(                    
+                    <Link key={artisans[i].id} to={`/artisan/${category}/${artisans[i].id}`} onClick={() => handleClick(artisans[i].id)}>
                       <div className="container_list" key={i}>
                         <li>
                           <p>Nom de l'artisan:<br/> {artisans[i].name}</p>
@@ -32,15 +27,14 @@ const ListeArtisan = ({ artisans }) => {
                           <p>Localisation: {artisans[i].location}</p>
                         </li>
                       </div>
-                    </Link>
-                  
+                    </Link>                  
                   )  
                 }     
               }
               return blocArtisans;
             })()}
 
-            {/* ---autre méthode
+            {/* ---autre méthode pour la fiche d'un artisan
             const ListeArtisan = ({ artisans, category: propCategory}) => {
             const artisansFiltered = artisans.filter(artisan => artisan.category === category);
             {artisansFiltered.map(artisan => (
