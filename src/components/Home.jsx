@@ -29,7 +29,7 @@ function Home() {
                     <article>
                         <h3>Etape 1: Choisissez une catégorie d'artisan dans le menu</h3>
                         <p>Explorez notre menu pour trouver la catégorie d'artisanat qui correspond à vos besoins. 
-                            Que ce soit la menuiserie, la peinture,la plomberie, ou d'autres métiers, 
+                            Que ce soit la menuiserie, la peinture, la plomberie, ou d'autres métiers, 
                             nous avons une variété d'artisans qualifiés.</p>
                     </article>
                     <article>

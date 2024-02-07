@@ -23,8 +23,9 @@
   }
 }
 
-input {
+.nom, .objet {
   width: 325px;
+  margin-bottom: 10px;
 }
 
 body button {
@@ -32,6 +33,7 @@ body button {
   color: white;
   width: 100px;
   border-radius: 30px;
+  border: none;
 }
 
-/*# sourceMappingURL=test.css.map */
+

@@ -7,7 +7,8 @@ import { useParams } from 'react-router-dom';
 const Artisan = () => {
   const { id, category } = useParams();
   const [artisan, setArtisan] = useState(null);
-/************************* *
+
+/*gestion de l'envoi du mail*/
   const [formData, setFormData] = useState({
     name: '',
     subject: '',
@@ -18,35 +19,29 @@ const Artisan = () => {
     e.preventDefault();
 
   try {
-    const response = await fetch('http://localhost:1080/maildev', {
+    const response = await fetch('http://localhost:1080/email', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
         from: 'johndoe@gmail.com',
-        to: 'tealc972@hotmail.com',
+        to: 'johndoe@gmail.com',
         subject: formData.subject,
         text: `De: ${formData.name}\n\n${formData.message}`
       }),
     });
 
     if (response.ok) {
-      const result = await response.json();
-      console.log(result);
-    
-
-    console.log("l'objet: ",formData.subject, "le nom de l'artisan :", formData.name, "et le message :", formData.message);
-      if (result.success) {
-        console.log('E-mail envoyé avec succès');
-      // Ajoutez ici le code pour gérer le succès de l'envoi
-      }
-    }else{
-        console.error('Erreur lors de la requête HTTP', response.statusText);
-      }
+      await response.json();
+      setFormData({
+        name: '',
+        subject: '',
+        message: ''
+      },()=>{});    
+    }
     } catch (error) {
       console.error('Erreur lors de l\'envoi de l\'e-mail', error);
-      // Ajoutez ici le code pour gérer l'erreur de requête HTTP
     }
   };
 
@@ -57,24 +52,21 @@ const Artisan = () => {
     });
   };
 
-************************* */
+/************************* */
   useEffect(() => { 
     const getArtisanById = async () => {
       
         const response = await fetch("/datas.json"); 
-        console.log(response);    
         const data = await response.json();
         const foundArtisan = data.find((a) => a.id === id && a.category === category);
 
         if (foundArtisan) {
           setArtisan(foundArtisan);
-        } else {
-          console.log("Aucun artisan trouvé pour l'ID ", id);
-        }      
+        }       
     };
 
     getArtisanById();
-  }, [id]);
+  }, [id, category]);
 
   if (!artisan) {
     return <div>Aucun artisan trouvé</div>;
@@ -92,22 +84,21 @@ const Artisan = () => {
       </div>
       <div className='formulaire'>
         <fieldset>
-          <form action="" method='post'>
+          <form action="" method='post'onSubmit={handleFormSubmit}>
               <div>
-                  <input type="text" placeholder="Votre nom" required name='name'/>
+                  <input className="nom" type="text" placeholder="Votre nom" required name='name' onChange={handleInputChange}/>
               </div>
               <div>
-                  <input type="text" placeholder="Objet" name='subject' />
+                  <input className="objet" type="text" placeholder="Objet" name='subject' onChange={handleInputChange}/>
               </div>
               <div>
-                  <textarea cols="35" rows="10" placeholder="Votre message" ></textarea>
+                  <textarea cols="35" rows="10" placeholder="Votre message" onChange={handleInputChange}></textarea>
               </div>
               <button type="submit">Envoyer</button>
           </form>
           </fieldset>
       </div>
-    </div>
-    
+    </div>    
   );
 };
 

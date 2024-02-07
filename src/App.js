@@ -15,9 +15,7 @@ import Artisan from './components/Artisan';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() { 
-
-  const [termeRecherche, setTermeRecherche] = useState("");
-
+  
   const [artisans, setArtisans] = useState([]);
   
   const getArtisans = async () => {
@@ -34,7 +32,7 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path='/' element={<Layout artisans={artisans} setTermeRecherche={setTermeRecherche}/>}>
+        <Route path='/' element={<Layout artisans={artisans}/>}>
           <Route index element={<Home/>}/>
           <Route path='/artisan/:category' element={<ListeArtisan artisans={artisans}/>}/>          
           <Route path="/artisan/:category/:id" element={<Artisan artisans={artisans}/>}/>
