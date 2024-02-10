@@ -15,7 +15,7 @@ const ListeArtisan = ({ artisans }) => {
 
   useEffect(() => {
     //recherche au clique
-      setFiltered(artisans.filter(artisan => artisan.category == category ))
+      setFiltered(artisans.filter(artisan => artisan.category === category ))
   }, [category])
 
   const handleSearch = (e) => { 
@@ -30,12 +30,14 @@ const ListeArtisan = ({ artisans }) => {
     
   return (    
     <div className="bloc_listArtisan">
-      <p><input 
+      <p>
+        <input 
         type="text" 
         placeholder="Nom, Spécialité, ville" 
         onChange={handleSearch}
-      />
-      <FontAwesomeIcon icon={faSearch} size="lg" style={{color: "#384050"}}/></p>
+        />
+        <FontAwesomeIcon icon={faSearch} size="lg" style={{color: "#384050"}}/>
+      </p>
       <div className="container_listArtisan">
         <ul>
           {filtered.map((item, index) => (

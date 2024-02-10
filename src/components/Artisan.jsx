@@ -22,7 +22,7 @@ const Artisan = () => {
     const response = await fetch('http://localhost:1080/email', {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json',
+        'Content-Type': 'application/json',        
       },
       body: JSON.stringify({
         from: 'johndoe@gmail.com',
@@ -31,7 +31,7 @@ const Artisan = () => {
         text: `De: ${formData.name}\n\n${formData.message}`
       }),
     });
-
+    console.log("url ",response);
     if (response.ok) {
       await response.json();
       setFormData({
