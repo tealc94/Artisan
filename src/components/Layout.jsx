@@ -69,9 +69,7 @@ function MenuFooter() {
 
 export {MenuFooter};
 
-export default function Layout({ artisans }) {
-
- 
+export default function Layout({ artisans }) { 
 
   return(
     <>
