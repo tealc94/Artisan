@@ -20,7 +20,7 @@ function Home() {
     }, []);
 
     return(
-        <div>
+        <main>
             <h1 className="text-center">Trouver l'artisan parfait pour votre projet !</h1>
             <div className="container_artisan">
                 <section>      
@@ -70,7 +70,7 @@ function Home() {
                     </div>                                     
                 </section>
             </div>            
-        </div>
+        </main>
     )
 }
 
