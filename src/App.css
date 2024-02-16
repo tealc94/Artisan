@@ -16,7 +16,9 @@ body .textLink, address{
   color: white;
 }
 
-body .textLink:hover{
+body .textLink:hover,
+body .textLink:focus,
+body .textLink:active{
   text-decoration: underline;
   color: white;
 }
@@ -25,7 +27,7 @@ body h1, body h2, body h3{
   color: #00497c;
 }
 
-body p{
+body p, body li{
   color: #384050;
 }
 
@@ -55,7 +57,7 @@ body .menuLink:hover{
 }
 
 .container_footer{
-  background-color:#0074c7;    
+  background-color:#0074c7;  
 }
 
 .container_address{
@@ -67,7 +69,9 @@ body .menuLink:hover{
 .text_titre{
   color: white;
   font-weight: bold;
+  text-indent: -35px;
 }
+
 .text_adresse{
   color: white;
   text-indent: 15px;

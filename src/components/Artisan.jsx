@@ -90,15 +90,17 @@ const Artisan = () => {
   }
 
   return (
-    <div className='bloc_artisan'>
-      <div className='detail_artisan'>
-        <p>Nom de l'artisan: {artisan.name}</p>
-        <Rating size="large" name="read-only" value={artisan.note} precision={0.1} readOnly />
-        <p>Spécialité: {artisan.specialty}</p>
-        <p>Localisation: {artisan.location}</p>
-        <p>Site internet: {artisan.website}</p>
-        <p>A propos: {artisan.about}</p>
-      </div>
+    <main className='bloc_artisan'>
+      <article className='detail_artisan'>
+        <ul>
+          <li>Nom de l'artisan: {artisan.name}</li>
+          <li><Rating size="large" name="read-only" value={artisan.note} precision={0.1} readOnly /></li>
+          <li>Spécialité: {artisan.specialty}</li>
+          <li>Localisation: {artisan.location}</li>
+          <li>Site internet: {artisan.website}</li>
+          <li>A propos: {artisan.about}</li>
+        </ul>        
+      </article>
       <div className='formulaire'>
         <fieldset>
           <form action="" method='post'onSubmit={handleFormSubmit}>
@@ -115,7 +117,7 @@ const Artisan = () => {
           </form>
           </fieldset>
       </div>
-    </div>    
+    </main>    
   );
 };
 
