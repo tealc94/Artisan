@@ -1,6 +1,10 @@
-
-
 # Trouve ton artisan
+
+## Maquette Figma
+```
+Le fichier du projet se trouve dans le dossier Maquette Figma
+
+```
 
 ## Copie du projet en local
 ```
