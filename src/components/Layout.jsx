@@ -7,8 +7,7 @@ import { faMapMarkerAlt, faPhone } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import React from "react";
 
-function MenuHeader() { 
-
+function MenuHeader() {
   return (
     <header>
       <Navbar expand="lg" className="bg-body-tertiary navbar-header">
@@ -33,53 +32,45 @@ export {MenuHeader};
 
 function MenuFooter() {
   return (
-    <div>
-      <footer className="container_footer">
-        <div className="container_address">
-          <p className="text_titre">Lyon</p>
-          <address>
-            <FontAwesomeIcon icon={faMapMarkerAlt} size="lg" style={{color: "#ffffff",}} />101 cours Charlemagne 
-            <p className="text_adresse">CS 20033</p>
-            <p className="text_adresse">69269 LYON CEDEX 02</p>
-            <p className="text_adresse">France</p>
-            <FontAwesomeIcon icon={faPhone} size="lg" style={{color: "#ffffff",}} />+33 (0)4 26 73 40 00
-          </address>        
-        </div>   
-        <div className="lign"></div>   
-          <div>
-            <Nav className="justify-content-center navbar-footer" activeKey="/home">
-              <Nav.Item>
-                <Nav.Link as={Link} className="textLink" to="artisan/mentions">Mention légales</Nav.Link>
-              </Nav.Item>
-              <Nav.Item>
-                <Nav.Link as={Link} className="textLink" to="artisan/donnees-personnelles">Données personnelles</Nav.Link>
-              </Nav.Item>
-              <Nav.Item>
-                <Nav.Link as={Link} className="textLink" to="artisan/accessibilite">Accessibilité</Nav.Link>
-              </Nav.Item>    
-              <Nav.Item>
-                <Nav.Link as={Link} className="textLink" to="artisan/cookies">Cookies</Nav.Link>
-              </Nav.Item>    
-            </Nav> 
-          </div>  
-        </footer>             
-    </div>      
+    <footer className="container_footer">
+      <div className="container_address">
+        <p className="text_titre">Lyon</p>
+        <address>
+          <FontAwesomeIcon icon={faMapMarkerAlt} size="lg" style={{color: "#ffffff",}} />101 cours Charlemagne<p className="text_adresse">CS 20033</p>
+          <p className="text_adresse">69269 LYON CEDEX 02</p>
+          <p className="text_adresse">France</p>
+          <FontAwesomeIcon className="icon_adresse" icon={faPhone} size="lg" style={{color: "#ffffff",}} />+33 (0)4 26 73 40 00
+        </address>        
+      </div>   
+      <div className="lign"></div>   
+      <div>
+        <Nav className="justify-content-center navbar-footer" activeKey="/home">
+          <Nav.Item>
+            <Nav.Link as={Link} className="textLink" to="artisan/mentions">Mention légales</Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link as={Link} className="textLink" to="artisan/donnees-personnelles">Données personnelles</Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link as={Link} className="textLink" to="artisan/accessibilite">Accessibilité</Nav.Link>
+          </Nav.Item>    
+          <Nav.Item>
+            <Nav.Link as={Link} className="textLink" to="artisan/cookies">Cookies</Nav.Link>
+          </Nav.Item>    
+        </Nav> 
+      </div>  
+    </footer>
   );
 }
 
 export {MenuFooter};
 
 export default function Layout({ artisans }) { 
-
   return(
-    <>
-      <header>
-        <MenuHeader/>
-      </header>
+    <div className="test">
+      <MenuHeader/>
       <Outlet artisans={artisans}/>
-      <footer className="App-footer"> 
-        <MenuFooter/>
-      </footer>
-    </>
+      <MenuFooter/>
+    </div>
   )  
 }

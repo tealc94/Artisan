@@ -3,6 +3,7 @@
   display: flex;
   margin: 0 auto;
 }
+
 @media screen and (max-width: 800px) {
   .bloc_artisan {
     display: block;
@@ -16,6 +17,15 @@
   width: 50%;
   margin: 10px;
   padding: 20px;
+  height: 425px;
+}
+
+ul{
+  padding-left: 10px !important;
+}
+
+li{
+  margin: 10px 10px;
 }
 @media screen and (max-width: 800px) {
   .detail_artisan, .formulaire {

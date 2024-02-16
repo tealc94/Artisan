@@ -59,10 +59,12 @@ function Home() {
                             <Card key={item.id} style={{ width: "320px" }}>
                                 <Card.Body>
                                     <Card.Text>  
-                                        <p>Nom de l'artisan:<br/>{item.name}</p>
-                                        <Rating size="large" name="read-only" value={item.note} precision={0.1} readOnly /> 
-                                        <p>Spécialité: {item.specialty}</p> 
-                                        <p>Localisation: {item.location}</p>   
+                                        <ul>
+                                            <li>Nom de l'artisan:<br/>{item.name}</li>
+                                            <li><Rating size="large" name="read-only" value={item.note} precision={0.1} readOnly /></li> 
+                                            <li>Spécialité: {item.specialty}</li> 
+                                            <li>Localisation: {item.location}</li>  
+                                        </ul>
                                     </Card.Text>
                                 </Card.Body>
                             </Card>

@@ -29,7 +29,7 @@ const ListeArtisan = ({ artisans }) => {
   }
     
   return (    
-    <div className="bloc_listArtisan">
+    <main className="bloc_listArtisan">
       <p>
         <input 
         type="text" 
@@ -42,19 +42,17 @@ const ListeArtisan = ({ artisans }) => {
         <ul>
           {filtered.map((item, index) => (
               <Link key={item.id} to={`/artisan/${category}/${item.id}`}>
-                <div className="container_list" key={index}>
-                  <li>
-                    <p>Nom de l'artisan:<br/> {item.name}</p>
-                    <Rating size="large" name="read-only" value={item.note} precision={0.1} readOnly />
-                    <p>Spécialité: {item.specialty}</p>
-                    <p>Localisation: {item.location}</p>
-                  </li>
-                </div>
+                <article className="container_list" key={index}>
+                    <li>Nom de l'artisan:<br/> {item.name}</li>
+                    <li><Rating size="large" name="read-only" value={item.note} precision={0.1} readOnly /></li>
+                    <li>Spécialité: {item.specialty}</li>
+                    <li>Localisation: {item.location}</li>
+                </article>
               </Link>   
             ))}            
         </ul> 
       </div> 
-    </div>
+    </main>
   );
 };
     

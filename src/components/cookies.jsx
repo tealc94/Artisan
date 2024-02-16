@@ -1,8 +1,6 @@
 function Cookies() {
     return(
-        <div className="container_cookies">
-            <h1>Page en maintenance</h1>
-        </div>
+        <h1 className="container_cookies">Page en maintenance</h1>
     )
 }
 
