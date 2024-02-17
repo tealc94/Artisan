@@ -67,7 +67,7 @@ export {MenuFooter};
 
 export default function Layout({ artisans }) { 
   return(
-    <div className="test">
+    <div>
       <MenuHeader/>
       <Outlet artisans={artisans}/>
       <MenuFooter/>
